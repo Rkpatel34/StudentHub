@@ -1,0 +1,46 @@
+Student Hub Portal (index.html)
+│
+├── Login (login.html)
+│   └── Register (register.html)
+│
+├── Register (register.html)
+│
+├── Dashboard (dashboard.html)
+│   ├── Profile Summary
+│   ├── Courses
+│   ├── Progress
+│   ├── Notifications
+│   └── Logout
+│
+├── Profile (profile.html)
+│   ├── Personal Information
+│   ├── About Me
+│   ├── Skills
+│   └── Edit Profile
+│
+├── Courses (courese.html)
+│   ├── Web Development
+│   ├── App Development
+│   ├── Data Science
+│   ├── Artificial Intelligence
+│   ├── Machine Learning
+│   ├── Cyber Security
+│   ├── Cloud Computing
+│   ├── Graphic Design
+│   ├── Digital Marketing
+│   └── Programming (C/C++)
+│
+├── Attendance (Attendance.html)
+│   └── Attendance Form
+│
+├── Assignment (assigments.html)
+│   └── Assignment Submission Form
+│
+├── Result (result.html)
+│   └── Marks & Grades
+│
+├── Timetable (Timetable.html)
+│   └── Weekly Class Schedule
+│
+└── Contact (contect.html)
+    └── Contact Form
