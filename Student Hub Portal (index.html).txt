@@ -1,5 +1,8 @@
 Student Hub Portal (index.html)
 │
+|
+|---Admin page(admin.html)
+|
 ├── Login (login.html)
 │   └── Register (register.html)
 │
