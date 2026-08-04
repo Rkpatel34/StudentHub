@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+
+    <style>
+        body{
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+
+        h2{
+            text-align: center;
+            color: darkblue;
+        }
+
+        .box{
+            width: 350px;
+            margin: 40px auto;
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: darkblue;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+
+        <h2>Student Attendance Form</h2>
+
+        <form>
+
+            <label>Student Name:</label>
+            <input type="text" placeholder="Enter Student Name" required>
+
+            <label>Roll Number:</label>
+            <input type="text" placeholder="Enter Roll Number" required>
+
+            <label>Date:</label>
+            <input type="date" required>
+
+            <label>Attendance Status:</label>
+            <select required>
+                <option value="">-- Select --</option>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button type="button" onclick="window.location.href='index.html'">
+Submit Attendance</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

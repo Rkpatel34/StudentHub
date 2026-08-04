@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body{
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+
+        .form-box{
+            width: 350px;
+            background-color: white;
+            margin: 40px auto;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+        }
+
+        input[type="radio"]{
+            width: auto;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: darkgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Registration Form</h1>
+
+    <div class="form-box">
+        <form>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number">
+
+            <label>Username</label>
+            <input type="text" placeholder="Enter username">
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter password">
+
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm password">
+
+            <label>Gender</label><br>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+            <br><br>
+
+            <label>Course</label>
+            <select>
+                <option>Select Course</option>
+                <option>Web Development</option>
+                <option>Data Science</option>
+                <option>Cyber Security</option>
+                <option>Programming</option>
+            </select>
+
+            <button type="button" onclick="window.location.href='index.html'">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>

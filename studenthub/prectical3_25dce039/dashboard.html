@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <style>
+        body{
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        .box{
+            width: 400px;
+            margin: 20px auto;
+            background-color: white;
+            border: 2px solid black;
+            padding: 15px;
+        }
+
+        h3{
+            color: blue;
+        }
+
+        ul{
+            padding-left: 20px;
+        }
+
+        button{
+            display: block;
+            width: 120px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: darkred;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Dashboard</h1>
+
+    <h2>Welcome User</h2>
+
+    <div class="box">
+        <h3>Profile</h3>
+        <p><b>Name:</b> radhe kalariya </p>
+        <p><b>Email:</b> student@gmail.com</p>
+    </div>
+
+    <div class="box">
+        <h3>Courses</h3>
+        <ul>
+            <li>Web Development</li>
+            <li>Data Science</li>
+            <li>Programming</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h3>Progress</h3>
+        <p>Completed Courses: <b>3</b></p>
+    </div>
+
+    <div class="box">
+        <h3>Notifications</h3>
+        <p>No New Notifications</p>
+    </div>
+
+    <button onclick="window.location.href='index.html'">Logout</button>
+
+</body>
+</html>

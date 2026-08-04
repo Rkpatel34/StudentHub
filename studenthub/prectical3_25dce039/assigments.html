@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+
+    <style>
+        body{
+            background-color: lightblue;
+            /* If you have an image, use:
+            background-image: url("62351907-9b4c-4cbf-a53b-251e573591b8.png");
+            background-size: cover;
+            */
+            font-family: Arial, sans-serif;
+        }
+
+        h2{
+            text-align: center;
+            color: darkblue;
+        }
+
+        .box{
+            width: 350px;
+            background-color: white;
+            margin: 40px auto;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+        }
+
+        input[type="file"]{
+            border: none;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>Assignment Page</h2>
+
+        <form>
+
+            <label>Student Name:</label>
+            <input type="text" placeholder="Enter Student Name" required>
+
+            <label>Roll Number:</label>
+            <input type="text" placeholder="Enter Roll Number" required>
+
+            <label>Assignment Title:</label>
+            <input type="text" placeholder="Enter Assignment Title" required>
+
+            <label>Submission Date:</label>
+            <input type="date" required>
+
+            <label>Upload Assignment:</label>
+            <input type="file" required>
+
+            <button type="button" onclick="window.location.href='index.html'">
+                Submit Assignment
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

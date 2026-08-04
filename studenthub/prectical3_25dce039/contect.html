@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+
+    <style>
+        body{
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+
+        .box{
+            width: 350px;
+            margin: 30px auto;
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input, textarea{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>Contact Us</h1>
+
+        <form>
+
+            <label>Name:</label><br>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email:</label><br>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Phone Number:</label><br>
+            <input type="tel" placeholder="Enter your phone number">
+
+            <label>Subject:</label><br>
+            <input type="text" placeholder="Enter subject">
+
+            <label>Message:</label><br>
+            <textarea rows="5" placeholder="Enter your message"></textarea>
+
+             <button type="button" onclick="window.location.href='index.html'">Send Message</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
