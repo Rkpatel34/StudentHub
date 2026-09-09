@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Attendance</title>
+
+<style>
+
+body{
+    background-color:lightblue;
+    font-family:Arial,sans-serif;
+    transition:.3s;
+}
+
+h2{
+    text-align:center;
+    color:darkblue;
+}
+
+.box{
+    width:350px;
+    margin:30px auto;
+    background-color:white;
+    border:2px solid black;
+    padding:20px;
+    border-radius:8px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,select{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    margin-bottom:15px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    margin:5px 0;
+    background-color:blue;
+    color:white;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background-color:darkblue;
+}
+
+#message{
+    display:none;
+    padding:10px;
+    margin-top:15px;
+    text-align:center;
+    background-color:lightgreen;
+    color:darkgreen;
+}
+
+/* Dark Mode */
+
+.dark{
+    background-color:#222;
+    color:white;
+}
+
+.dark .box{
+    background-color:#444;
+    border-color:white;
+}
+
+.dark h2{
+    color:cyan;
+}
+
+.dark input,
+.dark select{
+    background-color:#ddd;
+    color:black;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="box">
+
+<h2>Student Attendance Form</h2>
+
+<!-- Dark Mode -->
+
+<button type="button" onclick="changeTheme()">
+Dark / Light Mode
+</button>
+
+
+<form id="attendanceForm">
+
+<label>Student Name:</label>
+
+<input type="text"
+       id="name"
+       placeholder="Enter Student Name">
+
+
+<label>Roll Number:</label>
+
+<input type="text"
+       id="roll"
+       placeholder="Enter Roll Number">
+
+
+<label>Date:</label>
+
+<input type="date" id="date">
+
+
+<label>Attendance Status:</label>
+
+<select id="status">
+
+<option value="">-- Select --</option>
+
+<option value="Present">Present</option>
+
+<option value="Absent">Absent</option>
+
+</select>
+
+
+<button type="button" onclick="submitAttendance()">
+Submit Attendance
+</button>
+
+
+<button type="button" onclick="clearForm()">
+Clear
+</button>
+
+</form>
+
+
+<!-- Message -->
+
+<div id="message"></div>
+
+</div>
+
+
+<script>
+
+/* Load saved theme */
+
+if(localStorage.getItem("theme")=="dark"){
+    document.body.classList.add("dark");
+}
+
+
+/* Dark / Light Mode */
+
+function changeTheme(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+    }
+    else{
+        localStorage.setItem("theme","light");
+    }
+
+}
+
+
+/* Submit Attendance */
+
+function submitAttendance(){
+
+    let name=document.getElementById("name").value;
+    let roll=document.getElementById("roll").value;
+    let date=document.getElementById("date").value;
+    let status=document.getElementById("status").value;
+
+    /* Validation */
+
+    if(name=="" || roll=="" || date=="" || status==""){
+
+        alert("Please fill all fields!");
+
+        return;
+    }
+
+
+    /* Display message */
+
+    let message=document.getElementById("message");
+
+    message.style.display="block";
+
+    message.innerHTML=
+        "Attendance Submitted!<br>" +
+        "Student: "+name+"<br>" +
+        "Roll No: "+roll+"<br>" +
+        "Status: "+status;
+
+}
+
+
+/* Clear Form */
+
+function clearForm(){
+
+    document.getElementById("attendanceForm").reset();
+
+    document.getElementById("message").style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
