@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+
+<style>
+body{
+    background:lightblue;
+    font-family:Arial;
+    transition:.3s;
+}
+form{
+    background:white;
+    width:250px;
+    margin:70px auto;
+    padding:20px;
+    border:1px solid black;
+}
+input{
+    width:100%;
+    height:30px;
+    box-sizing:border-box;
+}
+button{
+    width:100%;
+    height:35px;
+    margin-top:8px;
+    background:blue;
+    color:white;
+    border:0;
+    cursor:pointer;
+}
+button:hover{background:darkblue}
+h2{text-align:center}
+#message{text-align:center;font-weight:bold}
+.success{color:green}
+.error{color:red}
+.dark{background:#222;color:white}
+.dark form{background:#444}
+.dark h2{color:cyan}
+</style>
+</head>
+
+<body>
+
+<form>
+
+<h2>Login</h2>
+
+<button type="button" onclick="theme()">
+Dark / Light Mode
+</button>
+
+<br><br>
+
+<label>Username:</label><br>
+<input type="text" id="username"
+placeholder="Enter Username">
+
+<br><br>
+
+<label>Password:</label><br>
+<input type="password" id="password"
+placeholder="Enter Password">
+
+<br>
+
+<label>
+<input type="checkbox" onclick="showPassword()">
+Show Password
+</label>
+
+<br><br>
+
+<button type="button" onclick="login()">
+Login
+</button>
+
+<button type="button" onclick="clearForm()">
+Clear
+</button>
+
+<p id="message"></p>
+
+<a href="#">Forgot Password?</a>
+
+<p>Don't have an account?</p>
+
+<a href="register.html">Register here</a>
+
+</form>
+
+
+<script>
+
+/* Dark Mode */
+
+function theme(){
+
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem("theme",
+    document.body.classList.contains("dark")
+    ?"dark":"light");
+}
+
+if(localStorage.getItem("theme")=="dark")
+    document.body.classList.add("dark");
+
+
+/* Show Password */
+
+function showPassword(){
+
+    let p=document.getElementById("password");
+
+    p.type=p.type=="password"?"text":"password";
+
+}
+
+
+/* Login */
+
+function login(){
+
+    let username=document.getElementById("username").value;
+    let password=document.getElementById("password").value;
+    let message=document.getElementById("message");
+
+    let user=/^[A-Za-z0-9]{3,15}$/;
+    let pass=/^(?=.*[A-Za-z])(?=.*[0-9]).{5,}$/;
+
+
+    if(username=="" || password==""){
+
+        message.innerHTML="Please enter all details.";
+        message.className="error";
+        return;
+    }
+
+
+    if(!user.test(username)){
+
+        message.innerHTML="Username must be 3-15 characters.";
+        message.className="error";
+        return;
+    }
+
+
+    if(!pass.test(password)){
+
+        message.innerHTML="Password needs a letter and number.";
+        message.className="error";
+        return;
+    }
+
+
+    if(username=="admin" && password=="12345"){
+
+        message.innerHTML="Login Successful! ✅";
+        message.className="success";
+
+    }else{
+
+        message.innerHTML="Invalid Username or Password.";
+        message.className="error";
+
+    }
+
+}
+
+
+/* Clear */
+
+function clearForm(){
+
+    document.querySelector("form").reset();
+
+    document.getElementById("message").innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>
