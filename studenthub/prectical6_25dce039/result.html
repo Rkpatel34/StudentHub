@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Result</title>
+
+<style>
+body{
+    background-color:lightblue;
+    font-family:Arial,sans-serif;
+    transition:.3s;
+}
+.box{
+    width:500px;
+    margin:30px auto;
+    background:white;
+    border:2px solid black;
+    padding:20px;
+}
+h1{text-align:center;color:darkblue}
+h2,h3{color:black}
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+th{
+    background-color:green;
+    color:white;
+}
+th,td{
+    border:1px solid black;
+    padding:10px;
+    text-align:center;
+}
+tr:hover{background-color:lightgray}
+button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    background:blue;
+    color:white;
+    border:0;
+    cursor:pointer;
+}
+.dark{background:#222;color:white}
+.dark .box{background:#444}
+.dark h1{color:cyan}
+.dark h2,.dark h3{color:white}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Student Result</h1>
+
+<button onclick="theme()">Dark / Light Mode</button>
+
+<h2>Student Name: Radhe Kalariya</h2>
+
+<div id="result">
+
+<table>
+
+<tr>
+<th>Subject</th>
+<th>Marks</th>
+<th>Grade</th>
+</tr>
+
+<tr>
+<td>HTML</td>
+<td class="marks">85</td>
+<td>A</td>
+</tr>
+
+<tr>
+<td>CSS</td>
+<td class="marks">80</td>
+<td>A</td>
+</tr>
+
+<tr>
+<td>JavaScript</td>
+<td class="marks">75</td>
+<td>B</td>
+</tr>
+
+<tr>
+<td>C Programming</td>
+<td class="marks">90</td>
+<td>A+</td>
+</tr>
+
+</table>
+
+<h3 id="total">Total Marks: 330 / 400</h3>
+
+<h3 id="percentage">Percentage: 82.5%</h3>
+
+<h3>Result: Pass</h3>
+
+</div>
+
+<button onclick="calculate()">
+Calculate Result
+</button>
+
+<button onclick="showResult()">
+Show / Hide Result
+</button>
+
+</div>
+
+<script>
+
+/* Dark Mode */
+
+function theme(){
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem("theme",
+    document.body.classList.contains("dark")?"dark":"light");
+}
+
+if(localStorage.getItem("theme")=="dark")
+    document.body.classList.add("dark");
+
+
+/* Calculate Result */
+
+function calculate(){
+
+    let marks=document.getElementsByClassName("marks");
+    let total=0;
+
+    for(let i=0;i<marks.length;i++){
+        total=total+Number(marks[i].innerHTML);
+    }
+
+    let percentage=total/4;
+
+    document.getElementById("total").innerHTML=
+        "Total Marks: "+total+" / 400";
+
+    document.getElementById("percentage").innerHTML=
+        "Percentage: "+percentage+"%";
+
+}
+
+
+/* Show / Hide Result */
+
+function showResult(){
+
+    let result=document.getElementById("result");
+
+    result.style.display=
+        result.style.display=="none"?"block":"none";
+
+}
+
+</script>
+
+</body>
+</html>

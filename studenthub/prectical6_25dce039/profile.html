@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Profile</title>
+
+<style>
+body{
+    background-color:lightblue;
+    font-family:Arial;
+    transition:.3s;
+}
+.box{
+    width:350px;background:white;margin:30px auto;
+    padding:20px;border:2px solid black;text-align:center;
+}
+img{
+    width:120px;height:120px;border:2px solid black;
+    border-radius:50%;
+}
+h2{color:darkblue}
+label{
+    display:block;text-align:left;font-weight:bold;margin-top:10px;
+}
+input{
+    width:100%;height:30px;margin-top:5px;
+    box-sizing:border-box;
+}
+button{
+    width:100%;height:35px;margin-top:10px;
+    background-color:blue;color:white;border:none;
+    cursor:pointer;
+}
+button:hover{background-color:green}
+#details{display:block}
+.dark{background:#222;color:white}
+.dark .box{background:#444}
+.dark h2{color:cyan}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Student Profile</h2>
+
+<button onclick="theme()">Dark / Light Mode</button>
+
+<img src="e:\second year\studenthub\New folder\WhatsApp Image 2026-08-04 at 9.41.36 PM.jpeg"
+alt="Profile Image">
+
+<div id="details">
+
+<label>Student Name</label>
+<input type="text" value="Radhe Kalariya" readonly>
+
+<label>Roll Number</label>
+<input type="text" value="25DCE039" readonly>
+
+<label>Email</label>
+<input type="email" value="kalriyaradhe004@gmail.com" readonly>
+
+<label>Mobile Number</label>
+<input type="text" value="7046492578" readonly>
+
+<label>Course</label>
+<input type="text" value="Computer Engineering" readonly>
+
+<label>Semester</label>
+<input type="text" value="3" readonly>
+
+</div>
+
+<button onclick="showDetails()">Show / Hide Details</button>
+
+<button onclick="back()">Back</button>
+
+</div>
+
+<script>
+
+/* Dark Mode */
+function theme(){
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme",
+    document.body.classList.contains("dark")?"dark":"light");
+}
+
+if(localStorage.getItem("theme")=="dark")
+    document.body.classList.add("dark");
+
+/* Show / Hide Details */
+function showDetails(){
+    let x=document.getElementById("details");
+    x.style.display=x.style.display=="none"?"block":"none";
+}
+
+/* Back Button */
+function back(){
+    window.location.href="dashboard.html";
+}
+
+</script>
+
+</body>
+</html>
