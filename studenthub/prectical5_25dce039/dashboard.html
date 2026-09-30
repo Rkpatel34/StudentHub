@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<style>
+
+body{
+    background-color:lightblue;
+    font-family:Arial,sans-serif;
+    transition:.3s;
+}
+
+h1{
+    text-align:center;
+    color:darkblue;
+}
+
+h2{
+    text-align:center;
+}
+
+.box{
+    width:400px;
+    margin:20px auto;
+    background-color:white;
+    border:2px solid black;
+    padding:15px;
+    border-radius:8px;
+}
+
+h3{
+    color:blue;
+}
+
+button{
+    display:block;
+    width:150px;
+    margin:20px auto;
+    padding:10px;
+    background-color:red;
+    color:white;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:darkred;
+}
+
+.action{
+    background-color:blue;
+}
+
+.action:hover{
+    background-color:darkblue;
+}
+
+#notification{
+    display:none;
+    background-color:lightgreen;
+    padding:10px;
+}
+
+/* Dark Mode */
+
+.dark{
+    background-color:#222;
+    color:white;
+}
+
+.dark h1{
+    color:cyan;
+}
+
+.dark .box{
+    background-color:#444;
+    border-color:white;
+}
+
+.dark h3{
+    color:cyan;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Dashboard</h1>
+
+<h2>Welcome User</h2>
+
+<!-- Theme Button -->
+
+<button class="action" onclick="changeTheme()">
+Dark / Light Mode
+</button>
+
+<!-- Profile -->
+
+<div class="box">
+
+<h3>Profile</h3>
+
+<p>
+<b>Name:</b> radhe kalariya
+</p>
+
+<p>
+<b>Email:</b> student@gmail.com
+</p>
+
+</div>
+
+<!-- Courses -->
+
+<div class="box">
+
+<h3>Courses</h3>
+
+<ul>
+
+<li>Web Development</li>
+
+<li>Data Science</li>
+
+<li>Programming</li>
+
+</ul>
+
+<button class="action"
+        onclick="showCourses()">
+
+Show Course Count
+
+</button>
+
+<p id="courseMessage"></p>
+
+</div>
+
+<!-- Progress -->
+
+<div class="box">
+
+<h3>Progress</h3>
+
+<p>
+Completed Courses:
+<b id="progress">3</b>
+</p>
+
+<button class="action"
+        onclick="showProgress()">
+
+Show Progress
+
+</button>
+
+<p id="progressMessage"></p>
+
+</div>
+
+<!-- Notifications -->
+
+<div class="box">
+
+<h3>Notifications</h3>
+
+<p id="notificationText">
+No New Notifications
+</p>
+
+<button class="action"
+        onclick="showNotification()">
+
+Check Notifications
+
+</button>
+
+<div id="notification">
+
+You have a new assignment notification!
+
+</div>
+
+</div>
+
+<!-- Logout -->
+
+<button onclick="logout()">
+Logout
+</button>
+
+
+<script>
+
+function changeTheme(){
+
+    document.body.classList.toggle("dark");
+
+
+    if(document.body.classList.contains("dark")){
+
+        localStorage.setItem("theme","dark");
+
+    }
+
+    else{
+
+        localStorage.setItem("theme","light");
+
+    }
+
+}
+
+if(localStorage.getItem("theme")=="dark"){
+
+    document.body.classList.add("dark");
+
+}
+function showCourses(){
+
+    document.getElementById("courseMessage")
+    .innerHTML =
+    "Total Courses: 3";
+
+}
+function showProgress(){
+
+    let progress =
+        document.getElementById("progress").innerHTML;
+
+    document.getElementById("progressMessage")
+    .innerHTML =
+    "You have completed "
+    + progress +
+    " courses.";
+
+}
+
+function showNotification(){
+
+    let notification =
+        document.getElementById("notification");
+
+
+    if(notification.style.display=="block"){
+
+        notification.style.display="none";
+
+    }
+
+    else{
+
+        notification.style.display="block";
+
+    }
+
+}
+
+function logout(){
+
+    let result =
+        confirm("Are you sure you want to logout?");
+
+
+    if(result==true){
+
+        alert("Logout successful!");
+
+        window.location.href="login.html";
+
+    }
+
+}
+</script>
+
+</body>
+
+</html>
