@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="courese.html">Courses</a>
+        <a href="Attendance.html">Attendance</a>
+        <a href="Timetable.html">Timetable</a>
+        <a href="assigments.html" class="active">Assignments</a>
+        <a href="result.html">Result</a>
+        <a href="contect.html">Contact</a>
+    </div>
+
+    <div class="box">
+
+        <h2>Assignment Page</h2>
+
+        <form onsubmit="event.preventDefault(); alert('Assignment Submitted Successfully!');">
+
+            <label>Student Name:</label>
+            <input type="text" placeholder="Enter Student Name" required>
+
+            <label>Roll Number:</label>
+            <input type="text" placeholder="Enter Roll Number" required>
+
+            <label>Assignment Title:</label>
+            <input type="text" placeholder="Enter Assignment Title" required>
+
+            <label>Submission Date:</label>
+            <input type="date" required>
+
+            <label>Upload Assignment:</label>
+            <input type="file" required>
+
+            <button type="submit">Submit Assignment</button>
+            <a class="back-link" href="index.html">← Back to Home</a>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

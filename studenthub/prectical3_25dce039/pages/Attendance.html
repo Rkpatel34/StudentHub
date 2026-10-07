@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="courese.html">Courses</a>
+        <a href="Attendance.html" class="active">Attendance</a>
+        <a href="Timetable.html">Timetable</a>
+        <a href="assigments.html">Assignments</a>
+        <a href="result.html">Result</a>
+        <a href="contect.html">Contact</a>
+    </div>
+
+    <div class="box">
+
+        <h2>Student Attendance Form</h2>
+
+        <form onsubmit="event.preventDefault(); alert('Attendance Submitted Successfully!');">
+
+            <label>Student Name:</label>
+            <input type="text" placeholder="Enter Student Name" required>
+
+            <label>Roll Number:</label>
+            <input type="text" placeholder="Enter Roll Number" required>
+
+            <label>Date:</label>
+            <input type="date" required>
+
+            <label>Attendance Status:</label>
+            <select required>
+                <option value="">-- Select --</option>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button type="submit">Submit Attendance</button>
+            <a class="back-link" href="index.html">← Back to Home</a>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+
