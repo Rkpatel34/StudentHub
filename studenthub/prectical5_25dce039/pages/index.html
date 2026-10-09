@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub Portal - Home</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">🏠 Home</a></li>
+                <li><a href="dashboard.html">📊 Dashboard</a></li>
+                <li><a href="Attendance.html">📅 Attendance</a></li>
+                <li><a href="assigments.html">📝 Assignments</a></li>
+                <li><a href="courese.html">📚 Courses</a></li>
+                <li><a href="Timetable.html">🗓️ Timetable</a></li>
+                <li><a href="result.html">🏆 Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+                <li><a href="contect.html">💬 Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" onclick="changeTheme()">🌓 Theme</button>
+                <a href="login.html" class="theme-toggle-btn" style="text-decoration:none; background:var(--primary)!important; color:white!important;">🔐 Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="box box-wide">
+            <h1>Student Hub Portal</h1>
+            <p id="welcome">Welcome! Select an option below.</p>
+            <p id="date"></p>
+
+            <!-- Action Controls -->
+            <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                <button onclick="changeTheme()" style="max-width: 200px;">Dark / Light Mode</button>
+                <button onclick="showMenu()" class="btn-secondary" style="max-width: 200px;">Show / Hide Menu</button>
+            </div>
+
+            <!-- Search Input -->
+            <input type="text" id="search" placeholder="🔍 Search portal option..." onkeyup="searchMenu()">
+
+            <!-- Navigation Grid Menu -->
+            <div id="menu">
+                <a href="dashboard.html"><span>📊</span> Dashboard</a>
+                <a href="Attendance.html"><span>📅</span> Attendance</a>
+                <a href="assigments.html"><span>📝</span> Assignment</a>
+                <a href="courese.html"><span>📚</span> Courses</a>
+                <a href="Timetable.html"><span>🗓️</span> Time Table</a>
+                <a href="result.html"><span>🏆</span> Result</a>
+                <a href="profile.html"><span>👤</span> Profile</a>
+                <a href="admin.html"><span>⚙️</span> Admin Panel</a>
+                <a href="contect.html"><span>💬</span> Contact Us</a>
+                <a href="login.html"><span>🔐</span> Login</a>
+                <a href="register.html"><span>📋</span> Register</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 StudentHub Portal • Built with ❤️ for Students • <a href="contect.html">Contact Support</a></p>
+    </footer>
+
+    <script src="../Js/script.js"></script>
+
+</body>
+
+</html>
