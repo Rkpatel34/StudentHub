@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profiles (JSON & Fetch API) - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html">📊 Dashboard</a></li>
+                <li><a href="Attendance.html">📅 Attendance</a></li>
+                <li><a href="assignments.html">📝 Assignments</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="Timetable.html">🗓️ Timetable</a></li>
+                <li><a href="result.html">🏆 Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+                <li><a href="students.html" class="active">👥 Students</a></li>
+                <li><a href="contect.html">💬 Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" onclick="changeTheme()">🌓 Theme</button>
+                <a href="register.html" class="theme-toggle-btn" style="text-decoration:none; background:var(--primary)!important; color:white!important;">📋 Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="box box-full">
+            <h1>👥 Student Directory</h1>
+            <p>Rendering external JSON data dynamically using Fetch API with Real-time Search, Department Filter, CGPA Sorting & Pagination</p>
+
+            <!-- Stats Overview Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalCount">5</div>
+                    <div class="stat-label">Total Registered Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="avgCgpa">8.9</div>
+                    <div class="stat-label">Average Batch CGPA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Academic Departments</div>
+                </div>
+            </div>
+
+            <!-- Controls (Search, Filter, Sort) -->
+            <div class="controls">
+                <!-- Search Input -->
+                <input type="text" id="search" placeholder="🔍 Search name or city..." onkeyup="filterStudents()">
+
+                <!-- Department Filter -->
+                <select id="department" onchange="filterStudents()">
+                    <option value="All">🏢 All Departments</option>
+                    <option value="Computer">💻 Computer</option>
+                    <option value="IT">🌐 IT</option>
+                    <option value="Civil">🏗️ Civil</option>
+                    <option value="AI">🤖 AI</option>
+                </select>
+
+                <!-- Sorting -->
+                <select id="sort" onchange="filterStudents()">
+                    <option value="default">↕️ Default Order</option>
+                    <option value="name-asc">🔤 Name (A to Z)</option>
+                    <option value="name-desc">🔤 Name (Z to A)</option>
+                    <option value="cgpa-desc">⭐ CGPA (High to Low)</option>
+                    <option value="cgpa-asc">⭐ CGPA (Low to High)</option>
+                </select>
+            </div>
+
+            <!-- Status / Notification Message -->
+            <div id="message" style="margin: 1rem 0;"></div>
+
+            <!-- Student Data Table -->
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Roll No</th>
+                            <th>Student Name</th>
+                            <th>Department</th>
+                            <th>CGPA</th>
+                            <th>City</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable">
+                        <!-- Student rows injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Buttons -->
+            <div class="pagination" id="pagination"></div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 StudentHub Portal • Built with ❤️ for Students • <a href="contect.html">Contact Support</a></p>
+    </footer>
+
+    <script src="../Js/script.js"></script>
+
+</body>
+
+</html>

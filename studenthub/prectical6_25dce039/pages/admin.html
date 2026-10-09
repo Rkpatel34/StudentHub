@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html">📊 Dashboard</a></li>
+                <li><a href="Attendance.html">📅 Attendance</a></li>
+                <li><a href="assignments.html">📝 Assignments</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="Timetable.html">🗓️ Timetable</a></li>
+                <li><a href="result.html">🏆 Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html" class="active">⚙️ Admin</a></li>
+                <li><a href="contect.html">💬 Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" onclick="changeTheme()">🌓 Theme</button>
+                <a href="login.html" class="theme-toggle-btn" style="text-decoration:none; background:var(--primary)!important; color:white!important;">🔐 Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="box box-wide">
+            <h1>⚙️ Admin Control Panel</h1>
+            <h2>Portal Management & Administration</h2>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                <button onclick="changeTheme()" style="max-width: 200px;">Dark / Light Mode</button>
+                <button onclick="showMessage()" class="btn-secondary" style="max-width: 200px;">Show Notification</button>
+            </div>
+
+            <p id="notification"></p>
+
+            <!-- Admin Modules Table -->
+            <h3>📋 System Modules</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Module Name</th>
+                            <th>Direct Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>📊 Student Dashboard</td>
+                            <td><a href="dashboard.html" class="action" style="padding:4px 12px; border-radius:6px; color:white;">Open</a></td>
+                        </tr>
+                        <tr>
+                            <td>📅 Attendance Tracking</td>
+                            <td><a href="Attendance.html" class="action" style="padding:4px 12px; border-radius:6px; color:white;">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>📝 Assignment Management</td>
+                            <td><a href="assignments.html" class="action" style="padding:4px 12px; border-radius:6px; color:white;">Manage</a></td>
+                        </tr>
+                        <tr>
+                            <td>📚 Academic Courses</td>
+                            <td><a href="courses.html" class="action" style="padding:4px 12px; border-radius:6px; color:white;">Manage</a></td>
+                        </tr>
+                        <tr>
+                            <td>🏆 Examination Results</td>
+                            <td><a href="result.html" class="action" style="padding:4px 12px; border-radius:6px; color:white;">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>🗓️ Weekly Time Table</td>
+                            <td><a href="Timetable.html" class="action" style="padding:4px 12px; border-radius:6px; color:white;">Update</a></td>
+                        </tr>
+                        <tr>
+                            <td>👤 Profile Management</td>
+                            <td><a href="profile.html" class="action" style="padding:4px 12px; border-radius:6px; color:white;">Open</a></td>
+                        </tr>
+                        <tr>
+                            <td>💬 User Inquiries & Contact</td>
+                            <td><a href="contect.html" class="action" style="padding:4px 12px; border-radius:6px; color:white;">Review</a></td>
+                        </tr>
+                        <tr>
+                            <td>🚪 Session Logout</td>
+                            <td><a href="login.html" class="btn-danger" style="padding:4px 12px; border-radius:6px; color:white; display:inline-block;">Logout</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Quick Stats -->
+            <h3>📊 Quick Portal Statistics</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Count / Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Total Enrolled Students</b></td>
+                            <td id="students" style="cursor:pointer; font-weight:bold; color:var(--primary);" title="Click to view">250</td>
+                        </tr>
+                        <tr>
+                            <td><b>Active Faculty Members</b></td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td><b>Active Courses</b></td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td><b>Pending Assignment Reviews</b></td>
+                            <td><span style="color:var(--danger); font-weight:bold;">9 Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- FAQ Section -->
+            <h3>❓ Frequently Asked Questions</h3>
+            <button onclick="showFAQ()" class="btn-secondary" style="max-width: 250px; margin: 0 auto 1rem;">
+                What is Student Hub?
+            </button>
+            <div id="faq" class="answer">
+                <b>Student Hub</b> is a comprehensive, centralized academic web portal built to manage student enrollment, course catalogs, daily attendance, class timetables, and assignment submissions efficiently.
+            </div>
+
+            <!-- Modal Popup -->
+            <div id="modal">
+                <h3>📢 Admin System Message</h3>
+                <p>Welcome to Student Hub Administrator Control Center!</p>
+                <button onclick="closeMessage()" class="btn-secondary">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 StudentHub Portal • Built with ❤️ for Students • <a href="contect.html">Contact Support</a></p>
+    </footer>
+
+    <script src="../Js/script.js"></script>
+
+</body>
+
+</html>
