@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html">📊 Dashboard</a></li>
+                <li><a href="Attendance.html" class="active">📅 Attendance</a></li>
+                <li><a href="assigments.html">📝 Assignments</a></li>
+                <li><a href="courese.html">📚 Courses</a></li>
+                <li><a href="Timetable.html">🗓️ Timetable</a></li>
+                <li><a href="result.html">🏆 Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+                <li><a href="contect.html">💬 Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" onclick="changeTheme()">🌓 Theme</button>
+                <a href="login.html" class="theme-toggle-btn" style="text-decoration:none; background:var(--primary)!important; color:white!important;">🔐 Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="box">
+            <h2>📅 Student Attendance Form</h2>
+            <p>Mark daily attendance with ease</p>
+
+            <form id="attendanceForm">
+                <label for="name">Student Name:</label>
+                <input type="text" id="name" placeholder="Enter Student Name" required>
+
+                <label for="roll">Roll Number:</label>
+                <input type="text" id="roll" placeholder="Enter Roll Number" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="status">Attendance Status:</label>
+                <select id="status" required>
+                    <option value="">-- Select Status --</option>
+                    <option value="Present">Present ✅</option>
+                    <option value="Absent">Absent ❌</option>
+                </select>
+
+                <button type="button" onclick="submitAttendance()" class="btn-success">
+                    Submit Attendance
+                </button>
+
+                <button type="button" onclick="clearForm()" class="btn-secondary">
+                    Clear Form
+                </button>
+            </form>
+
+            <!-- Message Box -->
+            <div id="message"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 StudentHub Portal • Built with ❤️ for Students • <a href="contect.html">Contact Support</a></p>
+    </footer>
+
+    <script src="../Js/script.js"></script>
+
+</body>
+
+</html>

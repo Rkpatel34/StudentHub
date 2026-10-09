@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html" class="active">📊 Dashboard</a></li>
+                <li><a href="Attendance.html">📅 Attendance</a></li>
+                <li><a href="assigments.html">📝 Assignments</a></li>
+                <li><a href="courese.html">📚 Courses</a></li>
+                <li><a href="Timetable.html">🗓️ Timetable</a></li>
+                <li><a href="result.html">🏆 Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+                <li><a href="contect.html">💬 Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" onclick="changeTheme()">🌓 Theme</button>
+                <button class="theme-toggle-btn btn-danger" onclick="logout()" style="cursor:pointer;">🚪 Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="box box-full">
+            <h1>Student Dashboard</h1>
+            <h2>Welcome Back, Radhe Kalariya 👋</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                
+                <!-- Profile Card -->
+                <div class="card" style="margin: 0;">
+                    <h3>👤 Student Profile</h3>
+                    <p><b>Name:</b> Radhe Kalariya</p>
+                    <p><b>Email:</b> student@gmail.com</p>
+                    <a href="profile.html" class="action" style="display:block; text-align:center; padding:0.6rem; border-radius:8px; color:white; margin-top:1rem;">View Full Profile</a>
+                </div>
+
+                <!-- Courses Card -->
+                <div class="card" style="margin: 0;">
+                    <h3>📚 Enrolled Courses</h3>
+                    <ul>
+                        <li><span>🌐 Web Development</span> <span style="color:var(--success); font-weight:bold;">Active</span></li>
+                        <li><span>📊 Data Science</span> <span style="color:var(--success); font-weight:bold;">Active</span></li>
+                        <li><span>💻 Programming</span> <span style="color:var(--success); font-weight:bold;">Active</span></li>
+                    </ul>
+                    <button class="action" onclick="showCourses()">Show Course Count</button>
+                    <p id="courseMessage" style="font-weight: bold; margin-top: 0.5rem;"></p>
+                </div>
+
+                <!-- Progress Card -->
+                <div class="card" style="margin: 0;">
+                    <h3>📈 Course Progress</h3>
+                    <p>Completed Courses: <b id="progress" style="color:var(--primary); font-size:1.2rem;">3</b></p>
+                    <button class="action" onclick="showProgress()">Check Progress Details</button>
+                    <p id="progressMessage" style="font-weight: bold; margin-top: 0.5rem;"></p>
+                </div>
+
+                <!-- Notifications Card -->
+                <div class="card" style="margin: 0;">
+                    <h3>🔔 Notifications</h3>
+                    <p id="notificationText">Check latest announcements</p>
+                    <button class="action" onclick="showNotification()">View Notifications</button>
+                    <div id="notification">
+                        📢 You have a new assignment deadline this week!
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Actions -->
+            <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button onclick="logout()" class="btn-danger" style="max-width: 200px;">🚪 Logout</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 StudentHub Portal • Built with ❤️ for Students • <a href="contect.html">Contact Support</a></p>
+    </footer>
+
+    <script src="../Js/script.js"></script>
+
+</body>
+
+</html>
