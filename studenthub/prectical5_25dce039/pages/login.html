@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student & Admin Login - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html">📊 Dashboard</a></li>
+                <li><a href="Attendance.html">📅 Attendance</a></li>
+                <li><a href="assigments.html">📝 Assignments</a></li>
+                <li><a href="courese.html">📚 Courses</a></li>
+                <li><a href="Timetable.html">🗓️ Timetable</a></li>
+                <li><a href="result.html">🏆 Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+                <li><a href="contect.html">💬 Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" onclick="changeTheme()">🌓 Theme</button>
+                <a href="register.html" class="theme-toggle-btn" style="text-decoration:none; background:var(--success)!important; color:white!important;">📋 Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="box" style="max-width: 420px;">
+            <h2>🔐 Portal Login</h2>
+            <p>Access your Student & Admin Account</p>
+
+            <form onsubmit="event.preventDefault(); login();">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter Username (e.g. admin)" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter Password (e.g. 12345)" required>
+
+                <div style="margin: 0.5rem 0 1rem; text-align: left;">
+                    <label style="cursor: pointer; display: inline-flex; align-items: center; font-weight: normal;">
+                        <input type="checkbox" onclick="showPassword()"> Show Password
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-success">
+                    Login Now ➔
+                </button>
+
+                <button type="button" onclick="clearForm()" class="btn-secondary">
+                    Clear Fields
+                </button>
+            </form>
+
+            <p id="message"></p>
+
+            <div style="margin-top: 1.5rem; font-size: 0.9rem;">
+                <p>Don't have an account yet?</p>
+                <a href="register.html" style="color:var(--primary); font-weight:bold;">Create an account here ➔</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 StudentHub Portal • Built with ❤️ for Students • <a href="contect.html">Contact Support</a></p>
+    </footer>
+
+    <script src="../Js/script.js"></script>
+
+</body>
+
+</html>
