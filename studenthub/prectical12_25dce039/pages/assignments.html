@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Submission - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="dashboard.html">📊 Dashboard</a></li>
+                <li><a href="Attendance.html">📅 Attendance</a></li>
+                <li><a href="assignments.html" class="active">📝 Assignments</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="Timetable.html">🗓️ Timetable</a></li>
+                <li><a href="result.html">🏆 Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+                <li><a href="students.html">👥 Students</a></li>
+                <li><a href="contect.html">💬 Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" onclick="changeTheme()">🌓 Theme</button>
+                <a href="login.html" class="theme-toggle-btn" style="text-decoration:none; background:var(--primary)!important; color:white!important;">🔐 Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="box">
+            <h2>📝 Assignment Submission</h2>
+            <p>Upload and submit your academic assignments</p>
+
+            <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                <button onclick="showHelp()" class="btn-secondary" style="max-width: 150px;">ℹ️ Help</button>
+            </div>
+
+            <!-- Help Accordion -->
+            <div id="help">
+                <b>📌 Submission Instructions:</b>
+                <p>1. Enter your student name and roll number accurately.</p>
+                <p>2. Give a descriptive assignment title.</p>
+                <p>3. Select the submission date and attach your file.</p>
+                <p>4. Click <b>Submit Assignment</b> to finish.</p>
+            </div>
+
+            <form id="form">
+                <label for="name">Student Name:</label>
+                <input type="text" id="name" placeholder="Enter Student Name" required>
+
+                <label for="roll">Roll Number:</label>
+                <input type="text" id="roll" placeholder="Enter Roll Number" required>
+
+                <label for="title">Assignment Title:</label>
+                <input type="text" id="title" maxlength="50" placeholder="Enter Assignment Title" required>
+                <p id="count" style="text-align: right;">Characters: 0 / 50</p>
+
+                <label for="date">Submission Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="file">Upload Assignment File:</label>
+                <input type="file" id="file" required>
+                <p id="fileName" style="text-align: left;"></p>
+
+                <button type="button" onclick="submitAssignment()" class="btn-success">
+                    Submit Assignment
+                </button>
+
+                <button type="button" onclick="clearForm()" class="btn-secondary">
+                    Clear Form
+                </button>
+            </form>
+
+            <div id="message">Assignment submitted successfully! ✅</div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 StudentHub Portal • Built with ❤️ for Students • <a href="contect.html">Contact Support</a></p>
+    </footer>
+
+    <script src="../Js/script.js"></script>
+
+</body>
+
+</html>
